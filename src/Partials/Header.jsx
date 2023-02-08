@@ -168,7 +168,7 @@ function Header({ scroll }) {
               >
                 <ul
                   className={`mt-4 flex flex-col gap-2 p-4 md:mt-0 md:flex-row md:items-center md:border-0 md:text-sm md:font-bold lg:gap-6 ${
-                    scroll ? "text-onSurface" : "lg:text-white text-onSurface "
+                    scroll ? "text-onSurface" : "lg:text-black text-onSurface "
                   }`}
                 >
                   <li>

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Partials/Header";
 import { Route, Routes } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Footer from "./Partials/Footer";
 
 function App() {
   const location = useLocation();
@@ -19,6 +20,7 @@ function App() {
           /> */}
         </Route>
       </Routes>
+      <Footer/>
     </div>
   );
 }
