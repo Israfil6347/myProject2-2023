@@ -30,7 +30,7 @@ function Header({ scroll }) {
               <ul className="flex gap-4  text-sm font-bold">
                 <li>
                   <NavLink
-                    to="board-members/office-bearers/"
+                    to="office-bearers"
                     className={`block border-b-2 border-transparent hover:scale-110 ${
                       location.pathname.includes("office-bearers")
                         ? "border-primary"
@@ -42,7 +42,7 @@ function Header({ scroll }) {
                 </li>
                 <li>
                   <NavLink
-                    to="board-members/board-of-directors/"
+                    to="board-of-directors"
                     className={`block border-b-2 border-transparent hover:scale-110 ${
                       location.pathname.includes("board-of-directors")
                         ? "border-primary"
@@ -54,7 +54,7 @@ function Header({ scroll }) {
                 </li>
                 <li>
                   <NavLink
-                    to="board-members/credit-committee/"
+                    to="credit-committee"
                     className={`block border-b-2 border-transparent hover:scale-110 ${
                       location.pathname.includes("credit-committee")
                         ? "border-primary"
@@ -66,7 +66,7 @@ function Header({ scroll }) {
                 </li>
                 <li>
                   <NavLink
-                    to="board-members/supervisory-committee/"
+                    to="supervisory-committee"
                     className={`block border-b-2 border-transparent hover:scale-110 ${
                       location.pathname.includes("supervisory-committee")
                         ? "border-primary"
@@ -107,7 +107,7 @@ function Header({ scroll }) {
         </div>
 
         <div className="container mx-auto  items-center justify-between p-3">
-          <nav className="px-2 bg-white border-gray-200">
+          <nav className="px-2 border-gray-200">
             <div className="container flex flex-wrap items-center justify-between mx-auto">
               <NavLink to="/" className="flex">
                 {scroll ? (
@@ -126,7 +126,7 @@ function Header({ scroll }) {
                 <span
                   // className="self-center text-xl font-semibold antialiased"
                   className={`self-center text-xl font-semibold antialiased${
-                    scroll ? "lg:text-2xl " : "lg:text-2xl text-white"
+                    scroll ? "lg:text-2xl " : "lg:text-2xl text-onSurface"
                   }`}
                 >
                   Dhaka Credit
@@ -162,10 +162,49 @@ function Header({ scroll }) {
               </button>
               <div
                 className={`w-full md:block md:w-auto ${
-                  mobileMenu ? "" : "hidden"
+                  mobileMenu ? "bg-surface inset-0 h-screen absolute" : "hidden"
                 }`}
                 id="navbar-multi-level"
               >
+                <div className="flex justify-between">
+                  <div className="flex pt-3  md:hidden ">
+                    <img className="pl-3 h-10  " src={logo} alt="header logo" />
+                    <span
+                      className="self-center text-xl -mt-3 ml-3  font-semibold antialiased lg:text-2xl text-primary"
+                      // className={`self-center text-xl font-semibold antialiased${
+                      //   scroll ? 'lg:text-2xl ' : 'lg:text-2xl text-white'
+                      // }`}
+                    >
+                      Dhaka Credit
+                    </span>
+                  </div>
+                  <div className="">
+                    <button
+                      data-collapse-toggle="navbar-multi-level"
+                      type="button"
+                      className="  p-2 m-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                      aria-controls="navbar-multi-level"
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
+                    >
+                      <span className="sr-only">Open main menu</span>
+                      <svg
+                        className="w-6 h-6"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
                 <ul
                   className={`mt-4 flex flex-col gap-2 p-4 md:mt-0 md:flex-row md:items-center md:border-0 md:text-sm md:font-bold lg:gap-6 ${
                     scroll ? "text-onSurface" : "lg:text-black text-onSurface "
@@ -185,6 +224,9 @@ function Header({ scroll }) {
                           ? "hover:border-primary"
                           : "hover:border-onPrimary"
                       }`}
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
                     >
                       Home
                     </NavLink>
@@ -204,6 +246,9 @@ function Header({ scroll }) {
                           ? "hover:border-primary"
                           : "hover:border-onPrimary"
                       }`}
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
                     >
                       Services
                     </NavLink>
@@ -222,6 +267,9 @@ function Header({ scroll }) {
                           ? "hover:border-primary"
                           : "hover:border-onPrimary"
                       }`}
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
                     >
                       Projects
                     </NavLink>
@@ -240,6 +288,9 @@ function Header({ scroll }) {
                           ? "hover:border-primary"
                           : "hover:border-onPrimary"
                       }`}
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
                     >
                       Loans
                     </NavLink>
@@ -258,6 +309,9 @@ function Header({ scroll }) {
                           ? "hover:border-primary"
                           : "hover:border-onPrimary"
                       }`}
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
                     >
                       Deposits
                     </NavLink>
@@ -277,6 +331,9 @@ function Header({ scroll }) {
                           ? "hover:border-primary"
                           : "hover:border-onPrimary"
                       }`}
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
                     >
                       Career
                     </NavLink>
@@ -296,6 +353,9 @@ function Header({ scroll }) {
                           ? "hover:border-primary"
                           : "hover:border-onPrimary"
                       }`}
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
                     >
                       About
                     </NavLink>
@@ -303,7 +363,7 @@ function Header({ scroll }) {
 
                   <li className="group relative inline-block">
                     <NavLink
-                      to="Notice"
+                      to="notice"
                       state="Notice"
                       className={`block border-b-2 border-transparent py-2 pr-4 pl-3 hover:scale-110 md:p-0 ${
                         location.pathname.includes("Notice")
@@ -316,6 +376,9 @@ function Header({ scroll }) {
                           ? "hover:border-primary"
                           : "hover:border-onPrimary"
                       }`}
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
                     >
                       Notice
                     </NavLink>
@@ -334,6 +397,9 @@ function Header({ scroll }) {
                           ? "hover:border-primary"
                           : "hover:border-onPrimary"
                       }`}
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
                     >
                       FAQs
                     </NavLink>
@@ -352,6 +418,9 @@ function Header({ scroll }) {
                           ? "hover:border-primary"
                           : "hover:border-onPrimary"
                       }`}
+                      onClick={() => {
+                        setMobileMenu(false);
+                      }}
                     >
                       Contact
                     </NavLink>
