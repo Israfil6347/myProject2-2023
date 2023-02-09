@@ -17,12 +17,14 @@ import Contact from "./Partials/Contact/Contact";
 import BoardOfDirector from "./Boardmembers/BoardOfDirector";
 import CreditCommittee from "./Boardmembers/CreditCommittee";
 import SupervisoryCommittee from "./Boardmembers/SupervisoryCommittee";
+import Banner from "./Partials/Banner";
 
 function App() {
   const location = useLocation();
   return (
     <div className="relative bg-background min-h-screen flex flex-col font-sans-serif">
       <Header />
+      <Banner />
       <Routes location={location} key={location.pathname}>
         <Route index element={<Home />} />
         <Route path="services" element={<Service />}></Route>

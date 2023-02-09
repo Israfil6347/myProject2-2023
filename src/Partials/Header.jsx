@@ -16,7 +16,7 @@ function Header({ scroll }) {
   return (
     <>
       <section
-        className={`sticky top-0 z-20 w-full bg-transparent transition-all duration-300 ${
+        className={`sticky top-0 z-20 w-full bg-transparent transition-all duration-300 h-50 ${
           scroll ? "mb-[394px] lg:mb-96" : "mb-[394px] lg:mb-80"
         }`}
       >
@@ -206,7 +206,7 @@ function Header({ scroll }) {
                   </div>
                 </div>
                 <ul
-                  className={`mt-4 flex flex-col gap-2 p-4 md:mt-0 md:flex-row md:items-center md:border-0 md:text-sm md:font-bold lg:gap-6 ${
+                  className={`mt-4 flex flex-col gap-2 p-4 md:mt-0 md:flex-row md:items-center md:border-0 md:text-sm md:font-bold lg:gap-10.5 md:gap-4 ${
                     scroll ? "text-onSurface" : "lg:text-black text-onSurface "
                   }`}
                 >
